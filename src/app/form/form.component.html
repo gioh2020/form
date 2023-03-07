@@ -1,0 +1,42 @@
+<h1> contact form</h1>
+<pre>{{contactForm.value|json}}</pre>
+<form (ngSubmit)="onSubmit(contactForm.value)" action="" #contactForm="ngForm">
+    <div class="mb-4">
+        <label for="name" class="form-label" >name: </label>
+        <input type="text" class="form-control" id="name" name="name" ngModel>
+        <div class="invalid-feedBack"> se necesita este campo</div>
+    </div>
+    <hr>
+    <div class="mb-4">
+        <label for="checkAdult" class="form-label">eres mayor de edad?</label>
+        <input type="checkbox" class="form-check-input" id="checkAdult" name="checkbox" ngModel>
+        <div class="invalid-feedBack"> se necesita este campo</div>
+    </div>
+   
+    <div class="mb-4">
+        <label for="name" class="form-label"></label>
+        <select name="departament" id="departament" class="form-select form-select-sm" name="departament" ngModel>
+            <option value="">---</option>
+            <option value="marketing">Marketing</option>
+            <option value="ventas">ventas</option>
+            <option value="Other">Marketing</option>
+        </select>    
+        <div class="invalid-feedBack"> se necesita este campo</div>
+    </div>
+
+    
+    <div class="mb-4">
+        <label for="name" class="form-label"></label>
+        <textarea name="comment" id="comment" cols="30" rows="10" class="form-control" name="comment" ngModel>comentario</textarea>
+        <div class="invalid-feedBack"> se necesita este campo</div>
+
+    </div>
+
+
+    <button class="btn btn-danger">Send</button>
+
+    <li><a [routerLink]="['/profile']" class="link-item">profile</a></li>
+    
+    <router-outlet></router-outlet>
+
+</form>
